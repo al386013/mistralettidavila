@@ -100,8 +100,8 @@ function anyadir($pdo, $table,$campos,$valores)
 }
 $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);  
 
-$table1="A_clientes";
-$table2="A_actividades";
+$table1="al386013_al386179_clientes";
+$table2="al386013_al386179_actividades";
 /*$table=$table2;
 echo $table;
 crearTablaActividades($pdo,$table);
