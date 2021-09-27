@@ -98,7 +98,7 @@ function anyadir($pdo, $table,$campos,$valores)
       exit;
    }
 }
-$pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);  
+$pdo = new PDO("pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);  
 
 $table1="A_clientes";
 $table2="A_actividades";

@@ -1,5 +1,5 @@
 <?php
-include("./gestion_BD_WP.php");
+include("./gestion_BD.php");
 
 try {
 
