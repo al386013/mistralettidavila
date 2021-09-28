@@ -1,25 +1,23 @@
 <?php
+#include(dirname(__FILE__)."/../../../wp-config.php");
 
-#include(dirname(__FILE__) . "/../../../wp-config.php");
+/** The name of the database */
+define('DB_NAME', 'ei1036_42');
 
- /** The name of the database */
- #define('DB_NAME', 'ei1036_42');
+/** MySQL database username */
+define('DB_USER', 'dllido');
 
- /** MySQL database username */
- #define('DB_USER', 'dllido');
+/** MySQL database password */
+define('DB_PASSWORD', 'luki.99');
 
- /** MySQL database password */
- define('DB_PASSWORD', 'luki.99');
+/** MySQL hostname */
+define('DB_HOST', 'db-aules.uji.es' );
 
- /** MySQL hostname */
- define('DB_HOST', 'db-aules.uji.es' );
+/** Database Charset to use in creating database tables. */
+define('DB_CHARSET', 'utf8');
 
- /** Database Charset to use in creating database tables. */
- define('DB_CHARSET', 'utf8');
-
- /** The Database Collate type. Don't change this if in doubt. */
- define('DB_COLLATE', '');
-
+/** The Database Collate type. Don't change this if in doubt. */
+define('DB_COLLATE', '');
 
 
 
@@ -29,86 +27,76 @@
  $query = "SELECT     * FROM       $table "; 
   
  */
-
-
-function crearTablaActividades($pdo, $table)
+function CrearTablaActividades($pdo,$table)
 {
    try {
-      Crea tabla si no existe
-      $query = "CREATE TABLE IF NOT EXISTS  $table (
-   id SERIAL PRIMARY KEY, 
-   nombre CHAR(50) NOT NULL,
-   descripcion CHAR(250), 
-   localizacion CHAR(50),
-   foto_file VARCHAR(50) );";
+      $table=dllido_actividades;
+      $pdo = new PDO("pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);  
 
-      $pdo->exec($query);
-   } catch (PDOException $e) {
-      echo "Failed to get DB handle: " . $e->getMessage() . "\n";
-      exit;
-   }
-}
-
-
-function crearTablaClientes($pdo, $table)
-{
-   try {
-
+      //Crea tabla si no existe
       $query="CREATE TABLE IF NOT EXISTS  $table (
-        id SERIAL PRIMARY KEY, 
-      nombre CHAR(50) NOT NULL, 
-      surname CHAR(50) , 
-      address CHAR(50),
-      city CHAR(50),
-      zip_code CHAR(5),
-      foto_file VARCHAR(25) );";
-	
+         actividad_id SERIAL PRIMARY KEY, 
+         nombre CHAR(50) NOT NULL,
+         descripcion CHAR(250) NOT NULL, 
+         localizacion CHAR(50),
+         foto_file VARCHAR(50) );";
+
+         
       $pdo->exec($query);
-   } catch (PDOException $e) {
+
+   catch (PDOException $e) {
       echo "Failed to get DB handle: " . $e->getMessage() . "\n";
       exit;
    }
 }
 
-function consultar($pdo, $table)
-{
-   $query = "SELECT     * FROM       $table ";
-   $consult = $pdo->prepare($query);
-   $a = $consult->execute(array());
-   if (1 > $a)
-      {echo "InCorrectoConsulta";
-         echo $table;}
-   return ($consult->fetchAll(PDO::FETCH_ASSOC));
-}
-
-function anyadir($pdo, $table,$campos,$valores)
+function CrearTablaCliente($pdo,$table)
 {
    try {
+      $table=A_clientes;
+      $query="CREATE TABLE IF NOT EXISTS  $table (actividad_id SERIAL PRIMARY KEY, nombre CHAR(50) NOT NULL, descripcion CHAR(250) NOT NULL, localización CHAR(50),foto_file VARCHAR(50) );";
 
+      
+      $pdo->exec($query);
 
-     
-      $query = "INSERT INTO    $table ($campos) VALUES (?)";
-      $consult = $pdo->prepare($query);
-      $a = $consult->execute($valores);
-      if (1 > $a) echo "InCorrecto";
-      $datos = consultar($pdo, $table);
- 
    } catch (PDOException $e) {
       echo "Failed to get DB handle: " . $e->getMessage() . "\n";
       exit;
    }
+}
+
+function consultar($pdo,$table) 
+{
+   $query = "SELECT     * FROM       $table "; 
+   $consult = $pdo->prepare($query);
+   $a=$consult->execute(array());
+   if (1>$a)echo "InCorrectoConsulta";
+   return ($consult->fetchAll(PDO::FETCH_ASSOC)); 
+ 
+}
+
+function anyadir($pdo,$table)
+{
+   try {
+      
+      
+      $valores=["actividad1","Largo actividad1"];
+      $query = "INSERT INTO    $table (nombre,descripcion) VALUES (?,?)";
+      $consult = $pdo->prepare($query);
+      $a=$consult->execute($valores); 
+      if (1>$a)echo "InCorrecto";
+      $datos=consultar($pdo,$table);
+      print_r($datos);
+      }
+      catch (PDOException $e) {
+          echo "Failed to get DB handle: " . $e->getMessage() . "\n";
+          exit;
+        }
+      
 }
 $pdo = new PDO("pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);  
 
-$table1="A_clientes";
-$table2="A_actividades";
-/*$table=$table2;
-echo $table;
-crearTablaActividades($pdo,$table);
-anyadir($pdo,$table,"nombre",["Actividad1"]);
-var_dump(consultar($pdo, $table));
-$table="A_clientes";
-crearTablaClientes($pdo,$table);
-anyadir($pdo,$table,"nombre",["Cliente1"]);
-consultar($pdo, $table);
-*/
+#crearTablaActividades()
+#anyadir($pdo,$table)
+
+ ?>
