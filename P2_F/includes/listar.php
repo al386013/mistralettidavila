@@ -21,6 +21,7 @@ function handler($pdo,$table)
     }
 }
 
+
 try{$table = $table2;
     handler($pdo,$table);}
 catch (PDOException $e) {
@@ -28,4 +29,4 @@ echo "Failed to get DB handle: " . $e->getMessage() . "\n";
 exit;
 }
 
-?>
+    ?>

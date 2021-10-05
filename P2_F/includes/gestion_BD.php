@@ -58,6 +58,7 @@ function crearTablaActividades($pdo, $table)
    }
 }
 
+
 function crearTablaClientes($pdo, $table)
 {
    try {

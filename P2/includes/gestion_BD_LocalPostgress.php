@@ -30,7 +30,7 @@ define('DB_COLLATE', '');
 function CrearTablaActividades($pdo,$table)
 {
    try {
-      $table=dllido_actividades;
+      $table=al386013_actividades;
       $pdo = new PDO("pgsql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASSWORD);  
 
       //Crea tabla si no existe
@@ -53,7 +53,7 @@ function CrearTablaActividades($pdo,$table)
 function CrearTablaCliente($pdo,$table)
 {
    try {
-      $table=A_clientes;
+      $table=al386013_clientes;
       $query="CREATE TABLE IF NOT EXISTS  $table (actividad_id SERIAL PRIMARY KEY, nombre CHAR(50) NOT NULL, descripcion CHAR(250) NOT NULL, localización CHAR(50),foto_file VARCHAR(50) );";
 
       

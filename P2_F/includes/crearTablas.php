@@ -2,6 +2,8 @@
 include("./gestion_BD.php");
 
 try {
+
+
 //$table=$table1;
 //crearTablaClientes($pdo,$table);
 
