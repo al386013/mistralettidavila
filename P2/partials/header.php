@@ -4,9 +4,9 @@
  * *
  * * Descripción extensa: Pagina web dividida en 4 ficheros.
  * *
- * * @author  Lola <dllido@uji.es>
+ * * @author  Jorge Davila <al386179@uji.es>
+ * * Melani Mistraletti <al386013@uji.es>
  * * @version 1
- * * @link http://dllido@al.nisu.org/P0/holaMundo.php
  * * -->
 <html>
 
@@ -20,11 +20,11 @@
 <body>
     <div class="page-wrapper">
 	<header>
-            <div id="vertical-center">
-		<img src="../img/logo1.png" id="logo" alt="logo" />
-                <div id="divEslogan">
-                    <p id="eslogan">TODOS SOMOS DEPORTE</p>
-                    <p id="subeslogan">Actividades deportivas adaptadas</p>
-                </div>
+        <div id="vertical-center">
+		    <img src="../img/logoATSD.png" id="logo" alt="logo" />
+            <div id="divEslogan">
+                <p id="eslogan">TODOS SOMOS DEPORTE</p>
+                <p id="subeslogan">Actividades deportivas adaptadas</p>
             </div>
+        </div>
 	</header>

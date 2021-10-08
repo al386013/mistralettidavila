@@ -1,6 +1,7 @@
 <main>
 	<h1>Gestión de Usuarios </h1>
 	<form class="fom_usuario" action="?action=registrar" method="POST">
+
 		<legend>Datos básicos</legend>
 		<label for="nombre">Nombre</label>
 		<br/>

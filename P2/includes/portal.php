@@ -19,18 +19,14 @@ if (isset($_REQUEST['action'])) $action = $_REQUEST["action"];
 else $action = "home";
 switch ($action) {
     case "home":
-
         $central = "/../partials/centralForm.php";
-
         break;
     case "controlForm":
         $central = "/controlForm.php";
         break;
     case "crearTabla":
         $central = "/crearTablas.php";
-        
         break;
-
     case "registro":
          $central = "/../partials/registerForm.php";
         break;
@@ -44,8 +40,6 @@ switch ($action) {
         $data["error"] = "Accion No permitida";
         $central = "/../partials/centralForm.php";
 }
-
-
 
 include(dirname(__FILE__)."/../partials/header.php");
 include(dirname(__FILE__)."/../partials/menu.php");

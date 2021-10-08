@@ -1,5 +1,5 @@
 <?php
-    //view_form.php
+//view_form.php
 
 /**
  * * Descripción: Controlador principal

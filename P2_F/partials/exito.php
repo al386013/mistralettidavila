@@ -1,1 +1,0 @@
-<p> Para consultar el listado de actividades registradas haga clic <a href="?action=listar">aquí</a>.</p>

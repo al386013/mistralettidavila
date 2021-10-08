@@ -1,5 +1,5 @@
 <?php
-    //view_form.php
+//view_form.php
 
 /**
  * * Descripción: Controlador principal
@@ -19,33 +19,36 @@ if (isset($_REQUEST['action'])) $action = $_REQUEST["action"];
 else $action = "home";
 switch ($action) {
     case "home":
-
         $central = "/../partials/centralForm.php";
-
         break;
     case "controlForm":
         $central = "/controlForm.php";
         break;
-    case "crearTabla":
+    /*case "crearTabla":
         $central = "/crearTablas.php";
-        
         break;
-
     case "registro":
          $central = "/../partials/registerForm.php";
-        break;
+        break;*/
     case "registrar":
         $central = "/registrar.php";
         break;
     case "listar":
         $central = "/listar.php";
         break;
+    case "borrar":
+        $central = "/borrar.php";
+        break;
+    case "modificar":
+        $central = "/modificar.php";
+        break;
+    case "modificar2":
+        $central = "/modificar2.php";
+        break;
     default:
         $data["error"] = "Accion No permitida";
         $central = "/../partials/centralForm.php";
 }
-
-
 
 include(dirname(__FILE__)."/../partials/header.php");
 include(dirname(__FILE__)."/../partials/menu.php");

@@ -3,22 +3,22 @@
 include(dirname(__FILE__) . "/../../../wp-config.php");
 
 // /** The name of the database */
-// define('DB_NAME', 'ei1036_42');
+define('DB_NAME', 'ei1036_42');
 
 // /** MySQL database username */
-// define('DB_USER', 'dllido');
+define('DB_USER', 'dllido');
 
 // /** MySQL database password */
-// define('DB_PASSWORD', 'luki.99');
+define('DB_PASSWORD', 'luki.99');
 
 // /** MySQL hostname */
-// define('DB_HOST', 'db-aules.uji.es' );
+define('DB_HOST', 'db-aules.uji.es' );
 
 // /** Database Charset to use in creating database tables. */
-// define('DB_CHARSET', 'utf8');
+define('DB_CHARSET', 'utf8');
 
 // /** The Database Collate type. Don't change this if in doubt. */
-// define('DB_COLLATE', '');
+define('DB_COLLATE', '');
 
 
 /* Consultas 
@@ -57,6 +57,7 @@ function crearTablaActividades($pdo, $table)
       exit;
    }
 }
+
 
 function crearTablaClientes($pdo, $table)
 {

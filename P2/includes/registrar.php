@@ -1,9 +1,8 @@
 <?php
 include("./gestion_BD.php");
 
-function handler($pdo,$table)
+function registrar($pdo,$table)
 {
-    
     $datos = $_REQUEST;
     if (count($_REQUEST) < 6) {
         $data["error"] = "No ha rellenado el formulario correctamente";
@@ -18,15 +17,15 @@ function handler($pdo,$table)
         $a=$consult->execute(array($_REQUEST['nombre'], $_REQUEST['descripcion'], $_REQUEST['localizacion'], $_REQUEST['fecha'], $_REQUEST['hora'] ));
         if (1>$a) echo "Error en la inserción de la actividad " . $_REQUEST['nombre'];
         else {
-            echo "¡Se ha registrado la actividad " . $_REQUEST['nombre'] . " correctamente!";
+            echo "<p class='anuncio'>¡Actividad registrada correctamente!</p>";
             include(dirname(__FILE__)."/../partials/exito.php");
         }
-    
     } catch (PDOExeption $e) {
         echo ($e->getMessage());
     }
 }
 
 $table = $table2;
-handler( $pdo,$table);
+registrar($pdo, $table);
+
 ?>

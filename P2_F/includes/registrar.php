@@ -1,32 +1,35 @@
 <?php
+/**
+* @title: P2 PHP registrar.php
+* @author Jorge Davila <al386179@uji.es> 
+* Melani Mistraletti <al386013@uji.es>
+* @copyright 2021 ATSD
+* @license CC-BY-NC-SA
+*/
+
 include("./gestion_BD.php");
 
-function handler($pdo,$table)
+function anyadirActividad($pdo,$table)
 {
-    
-    $datos = $_REQUEST;
     if (count($_REQUEST) < 6) {
         $data["error"] = "No ha rellenado el formulario correctamente";
         echo "Faltan campos obligatorios por rellenar en el formulario de registro.";
         return;
     }
-    $query = "INSERT INTO     $table (nombre, descripcion, localizacion, fecha, hora)
-                        VALUES (?,?,?,?,?)";  
-    try { 
-        $a=array($_REQUEST['nombre'], $_REQUEST['descripcion'], $_REQUEST['localizacion'], $_REQUEST['fecha'], $_REQUEST['hora'] );
-        $consult = $pdo->prepare($query);
-        $a=$consult->execute(array($_REQUEST['nombre'], $_REQUEST['descripcion'], $_REQUEST['localizacion'], $_REQUEST['fecha'], $_REQUEST['hora'] ));
-        if (1>$a) echo "Error en la inserción de la actividad " . $_REQUEST['nombre'];
-        else {
-            echo "¡Se ha registrado la actividad " . $_REQUEST['nombre'] . " correctamente!";
-            include(dirname(__FILE__)."/../partials/exito.php");
-        }
-    
-    } catch (PDOExeption $e) {
-        echo ($e->getMessage());
-    }
+
+    $valores = array($_REQUEST['nombre'], $_REQUEST['descripcion'], $_REQUEST['localizacion'], $_REQUEST['fecha'], $_REQUEST['hora']);
+    anyadir($pdo, $table, $valores);
 }
 
-$table = $table2;
-handler( $pdo,$table);
+try {
+    $table = $table2;
+    anyadirActividad($pdo,$table);
+    include("./listar.php");
+
+} catch (PDOException $e) {
+  echo "ERROR";
+  echo "Failed to get DB handle: " . $e->getMessage() . "\n";
+  exit;
+}
+
 ?>
