@@ -22,9 +22,9 @@
 	<header>
         <div id="vertical-center">
 		    <img src="../img/logoATSD.png" id="logo" alt="logo" />
-            <div id="divEslogan">
-                <p id="eslogan">TODOS SOMOS DEPORTE</p>
-                <p id="subeslogan">Actividades deportivas adaptadas</p>
-            </div>
+            <hgroup id="divEslogan">
+                <h1 id="eslogan">TODOS SOMOS DEPORTE</h1>
+                <h2 id="subeslogan">Actividades deportivas adaptadas</h2>
+            </hgroup>
         </div>
 	</header>
