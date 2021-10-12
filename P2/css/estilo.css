@@ -99,6 +99,7 @@ legend {
 
 label {
     font-size: 14px;
+    font-weight: bold;
 }
 
 input[type=text], input[type=date], input[type=time] {
