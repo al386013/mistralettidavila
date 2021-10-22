@@ -29,6 +29,7 @@ define('DB_COLLATE', '');
 
 /* Consultas 
  $query = "INSERT INTO    $table (?) VALUES (?,?,?,?,?)";
+ $query = "UPDATE $table SET nombre=(?), descripcion=(?) WHERE actividad_id=(?)";
  $query = "DELETE   FROM   $table WHERE actividad_id =(?)";
  $query = "SELECT     * FROM       $table "; 
  */
@@ -37,7 +38,6 @@ function eliminarTabla($pdo, $table)
 {
    try {
       $query = "DROP TABLE $table";
-               
       $pdo->exec($query);
    } catch (PDOException $e) {
       echo "Failed to get DB handle: " . $e->getMessage() . "\n";
