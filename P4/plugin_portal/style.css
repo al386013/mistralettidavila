@@ -1,0 +1,311 @@
+h1, .entry-header h2 {
+  color: #E6FFD0 !important; 
+}
+
+h2 a, .titulo-actividades, .entry-title {
+  color: #CEFFA2 !important; 
+}
+
+h2 a:hover {
+  color: #9ADA5A !important;
+}
+
+.site-title a {
+  color: #FFFFFF !important;
+  text-shadow: 3px 3px 3px #222;
+}
+
+.site-description {
+  color: #FFFFFF !important;
+  font-weight: 700;
+  text-shadow: 2px 2px 2px #222;
+}
+
+.site-footer {
+  background-color: #EEE;
+  color: #222;
+}
+
+.site-footer .widget-area {
+  padding-bottom: 0px;
+}
+
+.site-info a {
+  color: #222 !important;
+}
+
+#footer-title {
+  color: #222;
+  font-size: 0.680rem;
+  font-weight: 800;
+  letter-spacing: 0.1818em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+#mas-deportes {
+  text-decoration: underline;
+  color: #E6FFD0;
+}
+
+#mas-deportes:hover {
+  color: white;
+}
+
+.right {
+  float: right;
+  text-align: right;
+}
+
+.shortcode {
+  font-style: italic;
+}
+
+.aviso {
+  background-color: #E6FFD0;
+  border-radius: 2px;
+  color: #222;
+  padding: 0.8em;
+  font-weight: 600;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+.no-permitido {
+  background-color: #FF9B9B;
+}
+
+.widget-title {
+  color: black !important;
+}
+
+p {
+  text-align: justify;
+}
+
+#invisible {
+  display: none;
+}
+
+#cola {
+  position: fixed; z-index: 3; right: 0px; bottom: 0px;
+  background-color: #497339; padding: 1em;
+  border: 3px solid white;
+  font: bold 1.5em arial, sans-serif; text-decoration: blink;
+  animation: mymove 10s;
+  animation-iteration-count: 30;
+  animation-direction: alternate;
+}
+#cola a {
+  color: white;
+}
+@keyframes mymove {
+  from {bottom: 0px;}
+  to {bottom: 80%;}
+}
+
+details {
+  margin-bottom: 28px;
+}
+
+summary {
+  text-decoration: underline;
+}
+
+.info {
+  font-size: 16px;
+  margin-top: 10px;
+  padding-left: 18px;
+  color: #ababab;
+  font-style: italic;
+}
+
+label {
+  margin-bottom: 0px !important;
+}
+
+#foto_form {
+  margin: 25px 0px;
+  max-width: 420px;
+}
+
+.center {
+  text-align: center;
+}
+
+input[type=text], input[type=date], input[type=time], textarea {
+  width: 420px;
+  margin: 0px 0px 10px 0px;
+  padding: 0.4em 0.7em;
+}
+
+/** botones **/
+.button {
+  width: 10em !important;
+  margin: 5px 0px 5px 0px;
+  padding: 0.6em 0.7em;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+input[type=submit]:hover, .button:hover {
+  background-color: #E6FFD0 !important;
+}
+
+.borrar:hover {
+  background-color: #FF9B9B !important;
+}
+
+.button-cancelar {
+  color: black !important;
+  width: 100px !important;
+  font-size: 12px;
+  background-color: #787878 !important;
+  maring-bottom: 0px;
+}
+
+.button-cancelar:hover {
+  background-color: #BBB !important;
+}
+
+#botonRecuperar {
+  width: 300px !important;
+}
+
+#recuperarCPT {
+  color: #222;
+}
+
+.cancelar {
+  margin-left: 320px;
+  display: inline-block;
+}
+
+input[type=reset] {
+  border-radius: 2px;
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 1;
+  padding: 0.9em 2em;
+  margin-left: 5px;
+}
+
+/** tabla actividades **/
+table { 
+  font-size: 80%;
+  margin: 50px 0px; 
+}
+table th { 
+  text-align: center;
+}
+table td, th { 
+  width: auto;
+  min-width: 90px;
+  max-width: 200px; 
+  padding: 0.2em 0.5em;
+}
+
+/** Personalizar tabla con colores **/
+#rosa {
+  background-color: #FBD9FF;
+}
+
+#azul {
+  background-color: #A1FFF1;
+}
+
+#verde {
+  background-color: #B1FFA1;
+}
+
+#naranja {
+  background-color: #FFDEA1;
+}
+
+.botonColor {
+  margin: 5px;
+  padding: 12px 15px;
+  font-size: 14px;
+  width: 90px;
+}
+
+#oculto { 
+  display: none; 
+  margin-left: 30px;
+}
+
+#visible {
+  display: block;
+  margin-left: 30px;
+}
+
+#personalizar {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+#personalizar:hover {
+  cursor: pointer;
+}
+
+.foto-tabla {
+  width: 100%;
+  height: auto;
+}
+
+/** Carrusel **/
+#carrusel {
+  max-width: 600px;
+  margin: 30px 20px 0px 30px;
+  display: flex;
+  align-items: center;
+}
+
+#fotoCarrusel {
+  width: 100%;
+  height: 100%;
+  max-height: 300px;
+  min-height: 80px;
+}
+
+.button-carrusel {
+  padding: 5px 5px 0px 5px;
+  margin: 0px 20px;
+}
+
+#contenedorCarrusel {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foto-boton {
+  width: 100%;
+  height: auto;
+  max-height: 20px;
+  max-width: 40px;
+}
+
+/** Seccion juegos canvas **/
+#sketchpad {
+  background-color: #AFFEFF;
+}
+ 
+#lista {
+  margin: 20px 0px 30px 17px;
+}
+
+/** juego laberinto **/
+#sketchpad2 {
+  background-color: #e6ffd0;
+}
+
+#mensaje {
+  text-align: center;
+  color: rgb(255, 115, 55);
+  font-weight: 700;
+}
